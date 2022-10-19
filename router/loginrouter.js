@@ -11,14 +11,23 @@ let conn = mysql.createConnection({
 });
 
 router.post('/Login', (req, res) => {
-    let id = req.body.id
-    let pw = req.body.pw
-
-    if (id == 'smart' && pw == '123') {
-        res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06logins.html");
-    } else {
-        res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06loginf.html");
-    }
+    let id = req.body.id;
+    let pw = req.body.pw;
+    let sql = "select * from member where id=?";
+    conn.query(sql, [id], (err, row) => {
+        if (row[0]['pw'] == pw) {
+            res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06logins.html");
+        } else {
+            res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06loginf.html");
+            console.log(row);
+        }
+        // console.log(row);
+    })
+    // if (id == 'smart' && pw == '123') {
+    //     res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06logins.html");
+    // } else {
+    //     res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06loginf.html");
+    // }
 });
 
 router.post('/Join', (req, res) => {
@@ -45,6 +54,7 @@ router.get('/Delete', (req, res) => {
             res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06main.html")
         } else if(row.affectedRows == 0) {
             console.log("삭제된 값이 없습니다")
+            res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06delfail.html")
         } else {
             console.log("삭제실패 :" + err);
         }
