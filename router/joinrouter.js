@@ -31,6 +31,7 @@ router.post('/join', (req, res) => {
     res.write("TALK :" + req.body.talk + '<br>');
     res.write("</body>");
     res.write("</html>");
+    res.end();
 });
 
 // 외부에서 사용할 수 있게 만들어주기
