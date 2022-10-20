@@ -10,7 +10,11 @@ router.post('/Login', (req, res) => {
         if (err) {
             console.log("검색 실패 : " + err);
         } else if (row.length > 0) {
-            res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06logins.html");
+            //로그인 성공
+            res.render("LoginS", {
+                row_name : row
+            })
+            //res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06logins.html");
         } else if (row.length == 0) {
             res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06loginf.html");
         }
@@ -86,29 +90,9 @@ router.get('/SelectAll', (req, res) => {
             console.log("검색 실패 : " + err);
         } else if (row.length > 0) {
             console.log("검색된 데이터의 수 : " + row.length);
-            
-            
-            res.writeHead(200, {"Content-Type" : "text/html; charset=utf-8"});
-            res.write("<html>");
-            res.write("<body>");
-            res.write("<table border='1'>")
-            res.write("<tr>")
-            res.write("<th>ID</th>")
-            res.write("<th>PW</th>")
-            res.write("<th>NICK</th>")
-            res.write("</tr>")
-            
-            for (i = 0; i<row.length; i++){
-                res.write("<tr>")
-                res.write("<td>" + row[i].id + "</td>");
-                res.write("<td>" + row[i].pw + "</td>");
-                res.write("<td>" + row[i].nick + "</td>");
-                res.write("</tr>")
-            }
-            res.write("</table>")
-            res.write("</body>");
-            res.write("</html>");
-            res.end();
+            res.render("SelectAll", {
+                row_names : row
+            })
         } else if (row.length == 0) {
             console.log("검색된 데이터가 없습니다")
         }
@@ -124,31 +108,32 @@ router.get('/SelectOne', (req, res) => {
             console.log("검색 실패 : " + err);
         } else if (row.length > 0) {
             console.log("검색된 데이터의 수 : " + row.length);
-            
-            
-            res.writeHead(200, {"Content-Type" : "text/html; charset=utf-8"});
-            res.write("<html>");
-            res.write("<body>");
-            res.write("<table border='1'>")
-            res.write("<tr>")
-            res.write("<th>ID</th>")
-            res.write("<th>PW</th>")
-            res.write("<th>NICK</th>")
-            res.write("</tr>")
-            
-            for (i = 0; i<row.length; i++){
-                res.write("<tr>")
-                res.write("<td>" + row[i].id + "</td>");
-                res.write("<td>" + row[i].pw + "</td>");
-                res.write("<td>" + row[i].nick + "</td>");
-                res.write("</tr>")
-            }
-            res.write("</table>")
-            res.write("</body>");
-            res.write("</html>");
-            res.end();
+            //console.log(row);
+            res.render("SelectOne", {
+                row_name : row
+            })
         } else if (row.length == 0) {
             console.log("검색된 데이터가 없습니다")
+        }
+    })
+});
+
+router.get('/SelectDelete', (req, res) => {
+    let id = req.query.id;
+    let sql = "DELETE FROM member where id=(?)";
+    conn.query(sql, [id], (err, row) => {
+        if (err){
+            console.log("삭제실패 :" + err);
+        } else if(row.affectedRows > 0) {
+
+            console.log("삭제성공 :" + row.affectedRows);
+            res.redirect("http://127.0.0.1:3000/SelectAll")
+            
+        } else if(row.affectedRows == 0) {
+
+            console.log("삭제된 값이 없습니다")
+            res.redirect("http://127.0.0.1:5500/05.mynodejs/mynodejs/public/ex06delfail.html")
+            
         }
     })
 });

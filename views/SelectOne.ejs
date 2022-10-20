@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select One</title>
+</head>
+<body>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align:center;
+            width:100%;
+            height:100px;
+        }
+    </style>
+    <h1>검색된 사용자 정보</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>PW</th>
+            <th>NICK</th>
+        </tr>
+        <tr>
+            <td><%=row_name[0].id%></td>
+            <td><%=row_name[0].pw%></td>
+            <td><%=row_name[0].nick%></td>
+        </tr>
+    </table>
+</body>
+</html>

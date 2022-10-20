@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS</title>
+</head>
+<body>
+    <h1>랜더링 성공</h1>
+    <%
+        //nodejs코드를 작성하는 영역
+        console.log("라우터에서 보내는 name값 : " + name);
+    %>
+
+    라우터에서 보내는 name 값 : <%=name%><br>
+    라우터에서 보내는 name2 값 : <%=name2%>
+
+
+    <script>
+        console.log("라우터에서 보내는 name값 : " + name);
+        //자바스크립트 코드를 작성하는 영역
+    </script>
+</body>
+</html>
