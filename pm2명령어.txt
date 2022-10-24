@@ -1,8 +1,0 @@
-pm2 start 서버파일명 --watch
-watch 옵션이 있어야 실시간으로 감시 가능
-pm2 kill
-전체 서버 파일 중지
-pm2 list
-실행되고 있는 서버파일 확인
-pm2 monit
-실행되고 있는 서버파일 모니터링
