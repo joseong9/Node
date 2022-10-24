@@ -137,5 +137,17 @@ router.get('/SelectDelete', (req, res) => {
         }
     })
 });
+router.get("/Main", (req, res) => {
+    res.render("Main", {
+        id : req.session.user
+    })
+});
+
+router.get('/Logout', (req, res) => {
+    delete req.session.user;
+    res.render("Main", {
+        id : req.session.user
+    })
+});
 // 외부에서 사용할 수 있게 만들어주기
 module.exports = router;
