@@ -9,6 +9,14 @@ const bodyparser = require("body-parser");
 const Sessionrouter = reqire("./router/Sessionrouter.js")
 let ejs = require("ejs");
 
+let conn = {
+    host : "127.0.0.1",
+    user : "root",
+    password : "rtq134679@",
+    port : "3306",
+    database : "nodejs_DB"
+}
+
 let conn_session = new mysql_session(conn);     // 실제 사용할수있는 정보인지 검사
 app.use(session({      // 미들웨어로 세션기능 등록(저장위치 : mysql)
     secret : "smart",
@@ -23,5 +31,6 @@ app.use(bodyparser.urlencoded({extended:false}));//post 방식일 때 body 영�
 
 app.use(router3);
 app.use(EJSrouter);
+app.use(Sessionrouter);
 
 app.listen(3000);
