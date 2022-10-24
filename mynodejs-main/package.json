@@ -1,0 +1,18 @@
+{
+  "name": "express_1017",
+  "version": "0.0.1",
+  "description": "review express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Saebom",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "pm2": "^5.2.2"
+  }
+}

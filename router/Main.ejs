@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <!-- DB라우터에서 id를 보내주어야함 -->
+
+    <h1>회원 관리페이지</h1>
+    <a href="http://127.0.0.1:5500/nodejs/public/ex06Join.html"><button>회원가입</button></a>
+    <a href="http://127.0.0.1:5500/nodejs/public/ex06Delete.html"><button>회원삭제</button></a>
+    <a href="http://127.0.0.1:5500/nodejs/public/ex06Update.html"><button>회원수정</button></a>     <!-- database의 명령을날리고 실행이 됬는지 안됬는지를 판단 -->
+
+    <a href="http://127.0.0.1:3001/selectAll"><button>회원 전체검색</button></a>      <!-- // selectAll라우터로 이동 -->
+    <!-- 중간에 html page가 필요하지 x (사용자에게 받는 input값이 없어서)
+    // 바로 라우터로 이동하게 하기 -->
+    
+    <a href="http://127.0.0.1:5500/nodejs/public/ex06selectOne.html"><button>회원검색</button></a>
+    
+
+
+    
+    <%if (id == null){%>
+        <a href="http://127.0.0.1:5500/nodejs/public/ex05Login.html"><button>로그인</button></a>
+    <%} else{%>
+        <a href="http://127.0.0.1:3001/Logout"><button>로그아웃</button></a>
+    <%}%>
+</body>
+</html>

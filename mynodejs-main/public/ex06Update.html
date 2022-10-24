@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>회원수정페이지</h1>
+    <form action="http://127.0.0.1:3001/Update" method="post">
+        <input type="text" name="id"><br>
+
+        <select name="select">      <!-- 수정할 데이터 선택창 -->
+            <option>pw</option>
+            <option>nick</option>
+        </select>
+
+        <input type="text" name="data"><br>            <!--  //  data로 업데이트될 내용이 전달됨 -->
+        <input type="submit" value="회원수정"><br>
+
+    </form>
+
+</body>
+</html>

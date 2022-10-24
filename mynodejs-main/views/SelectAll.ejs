@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+    <h1>전체 사용자 정보</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>PW</th>
+            <th>NICK</th>
+        </tr>
+
+        <%for(let i=0; i< row_names.length; i++){%>     <!-- ejs에서 nodejs코드쓸 수있는부분 -->
+            <tr>
+                <td><%=row_names[i].id%></td>           <!-- id값을 꺼내와 브라우저에 표시(출력) -->
+                <td><%=row_names[i].pw%></td>
+                <td><%=row_names[i].nick%></td>
+                <td><a href="http://127.0.0.1:3001/SelectDelete?id=<%=row_names[i].id%>">삭제</a></td>
+            </tr>
+        <%}%>
+    </table>
+   
+
+</body>
+</html>

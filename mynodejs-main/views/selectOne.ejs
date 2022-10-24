@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+    <h1>검색된 사용자 정보</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>PW</th>
+            <th>NICK</th>
+        </tr>
+        <tr>
+            <th><%=row_name[0].id%></th>
+            <th><%=row_name[0].pw%></th>
+            <th><%=row_name[0].nick%></th>
+        </tr>
+    </table>
+    <!-- <%=row_name[0].id%>
+    <%=row_name[0].pw%>
+    <%=row_name[0].nick%>
+ -->
+
+</body>
+</html>

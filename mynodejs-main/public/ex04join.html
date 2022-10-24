@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	tr{
+		height: 40px;
+	}
+</style>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>	
+	<form action="http://127.0.0.1:3001/join" method="post">
+		<fieldset>
+			<legend>Join Page</legend>		
+			<table align="center">
+				<tr>
+					<td><label for="id">ID</label></td>
+					<td><input type="text" name="id" id="id"></td>
+				</tr>
+				<tr>
+					<td><label for="pw">PW</label></td>
+					<td><input type="password" name="pw" id="pw"></td>
+				</tr>			
+				<tr>
+					<td><label for="name">NAME</label></td>
+					<td><input type="text" name="name" id="name"></td>
+				</tr>				
+				<tr>
+					<td><label for="email">EMAIL</label></td>
+					<td><input type="email" name="email" id="email"></td>
+				</tr>				
+				<tr>
+					<td><label for="tel">TEL</label></td>
+					<td><input type="tel" name="tel" id="tel"></td>
+				</tr>					
+				<tr>
+					<td><label for="gender">GENDER&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label></td>
+					<td>MAN<input type="radio" name="gender" value="man" id="gender">WOMEN<input type="radio" name="gender" value="women" id="gender"></td>
+				</tr>
+				<tr>
+					<td><label for="hobby">HOBBY</label></td>
+					<td>SPORT<input type="checkbox" name="hobby" value="sport" id="hobby">STUDY<input type="checkbox" name="hobby" value="study" id="hobby">EATING<input type="checkbox" name="hobby" value="eating" id="hobby"></td>
+				</tr>
+				<tr>
+					<td><label for="birth">BIRTHDAY</label></td>
+					<td><input type="date" name="birth" id="birth"></td>
+				</tr>
+				<tr>
+					<td><label for="color">COLOR</label></td>
+					<td><input type="color" name="color" id="color"></td>
+				</tr>
+				<tr>
+					<td><label for="country">COUNTRY</label></td>
+					<td><select id="country" name="country" >
+					<option>choice..</option>
+					<option>KOREA</option>
+					<option>USA</option>
+					</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="talk">TALK</label></td>
+					<td><textarea id="talk" name="talk" rows="10" cols="30"></textarea>
+					</td>
+				</tr>
+				<tr align="center">
+					<td colspan="2"><input type="submit" value="확인"></td>
+				</tr>
+																								
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
