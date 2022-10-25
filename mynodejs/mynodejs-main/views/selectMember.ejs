@@ -21,7 +21,14 @@
                         <td>Addr</td>
                                 <td>삭제여부</td>
                      </tr>
-                     <%
+                     <%for(let i=0; i< row_name.length; i++){%>     <!-- ejs에서 nodejs코드쓸 수있는부분 -->
+                        <tr>
+                            <td><%=row_name[i].email%></td>           <!-- id값을 꺼내와 브라우저에 표시(출력) -->
+                            <td><%=row_name[i].tel%></td>
+                            <td><%=row_name[i].address%></td>
+                            <td><a href="http://127.0.0.1:3001/MessageDelete?email=<%=row_name[i].email%>">삭제</a></td>
+                        </tr>
+                    <%}%>
                      %>
                   </table>
                </nav>
