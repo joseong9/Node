@@ -114,7 +114,25 @@ router.post('/join', (req, res) => {
     res.end();
 });
 
+router.get('/ex01', (req, res) => {
+    console.log(req.query);
 
+    //세션 등록
+    req.session.user = {
+        name:req.query.username
+    }
+
+    console.log(req.session.user.name)
+
+    res.render("ex01",{
+        name : req.query.username,
+        season : req.query.season
+    })
+});
+
+router.get('/ex02', (req, res) => {
+    delete req.session.user;
+})
 
 
 module.exports = router;
